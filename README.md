@@ -14,7 +14,9 @@ This project is a comprehensive exploration of Object-Oriented Programming (OOP)
   - [1. Introduction to Object-Oriented Programming](#1-introduction-to-object-oriented-programming)
   Introduction to Java
   Writing My First Program in Java
+  Java Operators
   - [2. Core Java Concepts](#2-core-java-concepts)
+
   - [3. Advanced Java Features](#3-advanced-java-features)
   - [4. Design Patterns in Java](#4-design-patterns-in-java)
   - [5. Java and Database Connectivity](#5-java-and-database-connectivity)
@@ -510,7 +512,304 @@ For example, ‘1’, ‘a’
 String Literals (A sequence or string of characters) 
 For example, “Hello World!!!”, “CTGU”
 
+10. Variables and Data Types
 
+Variables are locations in memory in which values can be stored.
+Each Variable has a Data Type, Name and a Value.
+A variable’s Data Type defines what type of data and what size of the data, it can store. 
+A variable’s Value is the data that it is currently storing.
+
+Before use, variables should be Declared. That is, we specify that the variable with this particular name will store data of this particular type
+
+Variable declarations take the form: 
+VariableType VariableName 
+For example: 
+int x; 
+char a;
+Variables of the same type may be declared on the same line 
+For example,
+ int x, y, z;
+
+
+
+## Java Operators
+
+An operator is a function that has a special symbolic name and is invoked by using that symbol with an expression.
+Operator help to perform action between two operands
+Java has several kinds of operators. Op1 <Operator> Op2
+
+1. Arithmetic Operator
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| +        | Addition    | 5 + 3   |
+| -        | Subtraction | 8 - 2   |
+| *        | Multiplication | 4 * 6 |
+| /        | Division    | 10 / 2  |
+| %        | Modulus (remainder) | 7 % 3 |
+
+    public class ArithmeticOperatorsExample {
+        public static void main(String[] args) {
+            int num1 = 5;
+            int num2 = 3;
+
+            // Addition
+            int sum = num1 + num2;
+            System.out.println("Sum: " + sum);
+
+            // Subtraction
+            int difference = num1 - num2;
+            System.out.println("Difference: " + difference);
+
+            // Multiplication
+            int product = num1 * num2;
+            System.out.println("Product: " + product);
+
+            // Division
+            int quotient = num1 / num2;
+            System.out.println("Quotient: " + quotient);
+
+            // Modulus
+            int remainder = num1 % num2;
+            System.out.println("Remainder: " + remainder);
+        }
+    }
+
+
+2. Relational Operator
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| ==       | Equal to    | 5 == 5  |
+| !=       | Not equal to | 6 != 3 |
+| >        | Greater than | 8 > 2   |
+| <        | Less than   | 4 < 6   |
+| >=       | Greater than or equal to | 10 >= 5 |
+| <=       | Less than or equal to    | 7 <= 9  |
+
+    public class RelationalOperatorsExample {
+        public static void main(String[] args) {
+            int a = 5;
+            int b = 10;
+
+            // Equal to
+            boolean isEqual = (a == b);
+            System.out.println("a == b: " + isEqual);
+
+            // Not equal to
+            boolean isNotEqual = (a != b);
+            System.out.println("a != b: " + isNotEqual);
+
+            // Greater than
+            boolean isGreaterThan = (a > b);
+            System.out.println("a > b: " + isGreaterThan);
+
+            // Less than
+            boolean isLessThan = (a < b);
+            System.out.println("a < b: " + isLessThan);
+
+            // Greater than or equal to
+            boolean isGreaterThanOrEqual = (a >= b);
+            System.out.println("a >= b: " + isGreaterThanOrEqual);
+
+            // Less than or equal to
+            boolean isLessThanOrEqual = (a <= b);
+            System.out.println("a <= b: " + isLessThanOrEqual);
+        }
+    }
+
+
+3. Bitwise Operator
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| &        | Bitwise AND | 5 & 3   |
+| \|       | Bitwise OR  | 5 \| 3  |
+| ^        | Bitwise XOR | 5 ^ 3   |
+| ~        | Bitwise NOT | ~5      |
+| <<       | Left shift  | 5 << 2  |
+| >>       | Right shift | 5 >> 2  |
+| >>>      | Unsigned right shift | 5 >>> 2 |
+
+    public class BitwiseOperatorsExample {
+        public static void main(String[] args) {
+            int a = 5; // 101
+            int b = 3; // 011
+
+            // Bitwise AND
+            int bitwiseAnd = a & b; // 001
+            System.out.println("a & b: " + bitwiseAnd);
+
+            // Bitwise OR
+            int bitwiseOr = a | b; // 111
+            System.out.println("a | b: " + bitwiseOr);
+
+            // Bitwise XOR
+            int bitwiseXor = a ^ b; // 110
+            System.out.println("a ^ b: " + bitwiseXor);
+
+            // Bitwise NOT
+            int bitwiseNot = ~a; // 010
+            System.out.println("~a: " + bitwiseNot);
+
+            // Left shift
+            int leftShift = a << 2; // 10100
+            System.out.println("a << 2: " + leftShift);
+
+            // Right shift
+            int rightShift = a >> 2; // 001
+            System.out.println("a >> 2: " + rightShift);
+
+            // Unsigned right shift
+            int unsignedRightShift = a >>> 2; // 001
+            System.out.println("a >>> 2: " + unsignedRightShift);
+        }
+    }
+
+4. Logical Operator
+
+Logical operators in Java are used to perform logical operations on boolean values. They evaluate the truth or falsity of a given expression and return a boolean result.
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| &&       | Logical AND | true && false |
+| \|\|      | Logical OR  | true \|\| false |
+| !        | Logical NOT | !true      |
+
+The logical AND operator (`&&`) returns `true` if both operands are `true`, otherwise it returns `false`.
+
+The logical OR operator (`||`) returns `true` if at least one of the operands is `true`, otherwise it returns `false`.
+
+The logical NOT operator (`!`) negates the value of the operand. If the operand is `true`, it returns `false`, and if the operand is `false`, it returns `true`.
+
+Note: Short-circuit evaluation is used for logical operators. This means that if the result of the expression can be determined by evaluating only the first operand, the second operand is not evaluated.
+
+    public class LogicalOperatorsExample {
+        public static void main(String[] args) {
+            boolean a = true;
+            boolean b = false;
+
+            // Logical AND
+            boolean logicalAnd = a && b;
+            System.out.println("a && b: " + logicalAnd);
+
+            // Logical OR
+            boolean logicalOr = a || b;
+            System.out.println("a || b: " + logicalOr);
+
+            // Logical NOT
+            boolean logicalNot = !a;
+            System.out.println("!a: " + logicalNot);
+        }
+    }
+
+5. Assignment Operator
+
+The assignment operator in Java is used to assign a value to a variable. It is denoted by the symbol `=`.
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| =        | Assigns the value on the right to the variable on the left | int x = 5; |
+
+The assignment operator can also be combined with other operators to perform compound assignments. Here are some examples:
+
+| Operator | Description | Example |
+|----------|-------------|---------|
+| +=       | Adds the value on the right to the variable on the left and assigns the result to the variable on the left | x += 3; // equivalent to x = x + 3; |
+| -=       | Subtracts the value on the right from the variable on the left and assigns the result to the variable on the left | x -= 2; // equivalent to x = x - 2; |
+| *=       | Multiplies the value on the right with the variable on the left and assigns the result to the variable on the left | x *= 4; // equivalent to x = x * 4; |
+| /=       | Divides the variable on the left by the value on the right and assigns the result to the variable on the left | x /= 2; // equivalent to x = x / 2; |
+| %=       | Computes the remainder of dividing the variable on the left by the value on the right and assigns the result to the variable on the left | x %= 3; // equivalent to x = x % 3; |
+
+Note: The compound assignment operators are shorthand notations for performing arithmetic operations and assigning the result back to the variable.
+    
+        public class AssignmentOperatorsExample {
+            public static void main(String[] args) {
+                int x = 5;
+    
+                // Simple assignment
+                x = 5;
+                System.out.println("x = " + x);
+    
+                // Add and assign
+                x += 3; // equivalent to x = x + 3;
+                System.out.println("x += 3: " + x);
+    
+                // Subtract and assign
+                x -= 2; // equivalent to x = x - 2;
+                System.out.println("x -= 2: " + x);
+    
+                // Multiply and assign
+                x *= 4; // equivalent to x = x * 4;
+                System.out.println("x *= 4: " + x);
+    
+                // Divide and assign
+                x /= 2; // equivalent to x = x / 2;
+                System.out.println("x /= 2: " + x);
+    
+                // Modulus and assign
+                x %= 3; // equivalent to x = x % 3;
+                System.out.println("x %= 3: " + x);
+            }
+        }
+
+6. Conditional Operators / Misc
+
+Conditional Operator (?:)
+This operator has the form: 
+(condition)?(valueif true):(valueif false) 
+The condition is evaluated and if it is true value if true is returned, otherwise value if false is returned.
+For example, if a and b were integers, the following would return the maximum of a and b. 
+(a>b)?a:b
+This is a short hand for “if-then-else”
+
+    public class ConditionalOperatorExample {
+        public static void main(String[] args) {
+            int a = 10;
+            int b = 20;
+
+            int max = (a > b) ? a : b;
+            System.out.println("The maximum value is: " + max);
+        }
+    }
+
+
+7. Unary
+
+| Operator | Description |
+|----------|-------------|
+| ++       | Increment the value by 1 |
+| --       | Decrement the value by 1 |
+| +        | Unary plus (no effect on the value) |
+| -        | Unary minus (negates the value) |
+| !        | Logical NOT (negates the boolean value) |
+
+    public class UnaryOperatorExample {
+        public static void main(String[] args) {
+            int x = 5;
+
+            // Increment
+            x++;
+            System.out.println("x after increment: " + x);
+
+            // Decrement
+            x--;
+            System.out.println("x after decrement: " + x);
+
+            // Unary plus
+            int y = +x;
+            System.out.println("y after unary plus: " + y);
+
+            // Unary minus
+            int z = -x;
+            System.out.println("z after unary minus: " + z);
+
+            // Logical NOT
+            boolean logicalNot = true;
+            boolean result = !logicalNot;
+            System.out.println("result of logical NOT: " + result);
+        }
+    }
 
 
 
@@ -522,12 +821,7 @@ For example, “Hello World!!!”, “CTGU”
 
 <!-- 
 
-2. Core Java Concepts
-    2.1. Data Types and Variables
-    2.2. Control Structures (if-else, loops, switch)
-    2.3. Methods and Functions
-    2.4. Exception Handling
-    2.5. Collections Framework
+
 
 3. Advanced Java Features
     3.1. Generics
